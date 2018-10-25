@@ -5,10 +5,10 @@ spring:
 ---
 spring:
   profiles: dev
-    application:
-      name: qiqihal-config-dev
+  application:
+    name: qiqihal-config-dev
 ---
 spring:
   profiles: test
-    application:
-      name: qiqihal-config-test
+  application:
+    name: qiqihal-config-test
