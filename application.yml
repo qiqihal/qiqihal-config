@@ -2,21 +2,9 @@ spring:
   profiles:
     active:
     - dev
-    
 ---
 server:
-  port: 4002
-spring:
-  profiles: test
-  application:
-    name: QIQIHAL-config-client
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-test.com:7001/eureka/    
----
-server:
-  port: 4001
+  port: 4101
 spring:
   profiles: dev
   application:
@@ -25,5 +13,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka-dev.com:7001/eureka/    
+---
+server:
+  port: 4102
+spring:
+  profiles: test
+  application:
+    name: QIQIHAL-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-test.com:7001/eureka/          
     
  
