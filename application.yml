@@ -4,23 +4,23 @@ spring:
     - dev
 ---
 server:
-  port: 8001
+  port: 4001
 spring:
   profiles: dev
   application:
-    name: qiqihal-config-dev
+    name: QIQIHAL-config-client
 eureka:
   client:
     service-url:
       defaultZone: http://eureka-dev.com:7001/eureka/    
 ---
 server:
-  port: 8001
+  port: 4002
 spring:
   profiles: test
   application:
-    name: qiqihal-config-dev
+    name: QIQIHAL-config-client
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-test.com:7001/eureka/  
+      defaultZone: http://eureka-test.com:7002/eureka/  
