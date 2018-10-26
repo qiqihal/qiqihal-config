@@ -3,12 +3,24 @@ spring:
     active:
     - dev
 ---
+server:
+  port: 8001
 spring:
   profiles: dev
   application:
     name: qiqihal-config-dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-dev.com:7001/eureka/    
 ---
+server:
+  port: 8001
 spring:
   profiles: test
   application:
-    name: qiqihal-config-test
+    name: qiqihal-config-dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-test.com:7001/eureka/  
