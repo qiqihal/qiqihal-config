@@ -66,7 +66,7 @@ eureka:
   client:
     service-url:
       #defaultZone: http://localhost:7001/eureka #QIQIHAL-eureka项目中配置的eureka对外暴露的地址（单机）
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka
   instance:
     #修改eureka页面Instances currently registered with Eureka中的	Status，反复修改instance-id的值并重启该服务可以触发eureka自我保护机制
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
