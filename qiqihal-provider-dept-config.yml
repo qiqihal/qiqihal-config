@@ -5,11 +5,7 @@ spring:
 ---
 server:
   port: 8001
-logging:
-    config: classpath:logback-boot.xml
-     #控制台打印sql
-    level:
-      com.heilongjiang.mapper: debug
+##########################一下为spring增加的配置#########################  
 spring:
   profiles: dev
   application:
@@ -18,7 +14,7 @@ spring:
         #ribbon整合服务消费方后可以直接调用服务提供方注册在erueka中的服务名，不用在关心地址和端口号，
         #当服务提供方创建集群时，所有集群下的服务提供方注册在eureka中的微服务名称要统一命名，
         #因为使用ribbon做负载均衡时才让服务消费方负载时均衡调用所有服务提供方
-    name: QIQIHAL-dept
+    name: QIQIHAL-provider-dept-config-client
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.43.226:3306/deptdb01?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true
@@ -53,7 +49,12 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
-
+###################以下为logback增加的配置###########################
+logging:
+  config: classpath:logback-boot.xml
+    #控制台打印sql
+  level:
+    com.heilongjiang.mapper: debug    
 ###################以下为mybatis增加的配置###########################
 mybatis:
   configuration:
