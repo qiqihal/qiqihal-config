@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: QIQIHAL-config-client
+    name: QIQIHAL-config-server
 eureka:
   instance:
     #hostname: localhost #eureka 服务端名称
