@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 7001
+spring:
+  profiles: dev
+  application:
+    name: QIQIHAL-config-client
+eureka:
+  instance:
+    #hostname: localhost #eureka 服务端名称
+    hostname: eureka7001.com #服务端名称，需要修改host文件，增加映射
+
+  client:
+    register-with-eureka: false   #false表示不向注册中心注册自己
+    fetch-registry: false   #是否检索服务
+    service-url:
+      #微服务单机版配置
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #Eureka Server对外暴露的地址，设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机），同时QIQIHAL-provider服务端要注册进这三个eureka服务集群中，所以要在QIQIHAL-provider服务端中application.yml/properties中key为eureka: client: service-url: defaultZone: 配置eureka服务的地址
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #配置集群之间互相访问的地址，同时QIQIHAL-provider服务端要注册进这三个eureka服务集群中，所以要在QIQIHAL-provider服务端中application.yml/properties中key为eureka: client: service-url: defaultZone: 配置所有eureka服务的集群的地址
+ 
